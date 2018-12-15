@@ -3,13 +3,13 @@ package com.track.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-
 import java.util.Date;
 
 
 
 @Entity
 public class Steps {
+
 
 
     @Id
@@ -25,29 +25,27 @@ public class Steps {
     private int steps;
 
 
-    @ManyToOne
-    @JoinColumn(name="id")
-    private Student student;
 
+    @OneToOne
+    @JoinColumn(name="username")
+    private User name;
 
+    public Steps(Date date, int steps, User name) {
+        this.date = date;
+        this.steps = steps;
+        this.name = name;
+    }
 
     public Steps() {
     }
 
-    public Steps(int id, Date date, int steps, Student student) {
-        this.steps_id = id;
-        this.date = date;
-        this.steps = steps;
-        this.student = student;
-    }
 
-
-    public int getId() {
+    public int getSteps_id() {
         return steps_id;
     }
 
-    public void setId(int id) {
-        this.steps_id = id;
+    public void setSteps_id(int steps_id) {
+        this.steps_id = steps_id;
     }
 
     public Date getDate() {
@@ -66,22 +64,11 @@ public class Steps {
         this.steps = steps;
     }
 
-
-    public Student getStudent() {
-        return student;
+    public User getName() {
+        return name;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
-    @Override
-    public String toString() {
-        return "Steps{" +
-                "id=" + steps_id +
-                ", date=" + date +
-                ", steps=" + steps +
-                ", student=" + student +
-                '}';
+    public void setName(User name) {
+        this.name = name;
     }
 }

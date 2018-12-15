@@ -1,15 +1,10 @@
 package com.track.entity;
 
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.sql.Date;
+import javax.persistence.*;
 
 
 @Entity
 public class Student {
-
 
 
     @Id
@@ -17,11 +12,14 @@ public class Student {
     private int id;
 
 
-    private String name;
+
+    @OneToOne
+    @JoinColumn(name="username")
+    private User name;
 
 
 
-    public Student(int id, String name, String password) {
+    public Student(int id, User name, String password) {
         this.id = id;
         this.name = name;
 
@@ -39,12 +37,19 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
+    public User getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(User name) {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name=" + name +
+                '}';
+    }
 }
