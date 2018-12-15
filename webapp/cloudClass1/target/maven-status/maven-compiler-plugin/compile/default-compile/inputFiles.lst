@@ -1,4 +1,10 @@
-/Users/kiran/Desktop/csye6225-fall2018-master-final/webapp/stepcount/src/main/java/com/track/entity/Student.java
-/Users/kiran/Desktop/csye6225-fall2018-master-final/webapp/stepcount/src/main/java/com/track/entity/Parent.java
-/Users/kiran/Desktop/csye6225-fall2018-master-final/webapp/stepcount/src/main/java/com/track/entity/Steps.java
-/Users/kiran/Desktop/csye6225-fall2018-master-final/webapp/stepcount/src/main/java/com/track/Main.java
+/Users/kiran/Desktop/cloudClass1/src/main/java/com/track/security/BasicAuthEntryPoint.java
+/Users/kiran/Desktop/cloudClass1/src/main/java/com/track/security/WebSecurityConfig.java
+/Users/kiran/Desktop/cloudClass1/src/main/java/com/track/entity/Steps.java
+/Users/kiran/Desktop/cloudClass1/src/main/java/com/track/controller/UserController.java
+/Users/kiran/Desktop/cloudClass1/src/main/java/com/track/entity/User.java
+/Users/kiran/Desktop/cloudClass1/src/main/java/com/track/entity/Parent.java
+/Users/kiran/Desktop/cloudClass1/src/main/java/com/track/entity/Student.java
+/Users/kiran/Desktop/cloudClass1/src/main/java/com/track/dao/UserRepository.java
+/Users/kiran/Desktop/cloudClass1/src/main/java/com/track/Main.java
+/Users/kiran/Desktop/cloudClass1/src/main/java/com/track/security/BCryptPasswordEncoderBean.java
