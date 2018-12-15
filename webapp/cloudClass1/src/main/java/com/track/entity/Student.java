@@ -1,6 +1,7 @@
 package com.track.entity;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
@@ -10,13 +11,13 @@ import java.sql.Date;
 public class Student {
 
 
+
     @Id
+    @Column(nullable=false)
     private int id;
 
 
     private String name;
-
-
 
 
 

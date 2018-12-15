@@ -1,10 +1,14 @@
 package com.track.controller;
 
+import com.track.dao.StepsRepository;
 import com.track.dao.UserRepository;
+import com.track.entity.Steps;
 import com.track.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +26,8 @@ public class UserController {
     private UserRepository userRepository;
 
 
+    @Autowired
+    private StepsRepository stepsRepository;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -66,4 +72,26 @@ public class UserController {
 
     }
 
+
+    @RequestMapping(value="/steps",method = RequestMethod.POST )
+    public ResponseEntity<?> uploadSteps(@RequestBody Steps steps) {
+
+        System.out.println("in steps post ");
+        System.out.println(steps);
+        System.out.println(steps.getDate().toString());
+
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();
+
+        Steps steps_1 = new Steps();
+
+        steps.setSteps(10);
+
+
+        stepsRepository.save(steps);
+
+        return ResponseEntity.ok("ok");
+
+    }
 }
