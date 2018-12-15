@@ -1,10 +1,4 @@
-/Users/kiran/Desktop/kiran/cloud_computing/basic_rest/cloudClass1/src/main/java/com/demo/config/AppConfig.java
-/Users/kiran/Desktop/kiran/cloud_computing/basic_rest/cloudClass1/src/main/java/com/demo/security/WebSecurityConfig.java
-/Users/kiran/Desktop/kiran/cloud_computing/basic_rest/cloudClass1/src/main/java/com/demo/dao/UserDao.java
-/Users/kiran/Desktop/kiran/cloud_computing/basic_rest/cloudClass1/src/main/java/com/demo/Main.java
-/Users/kiran/Desktop/kiran/cloud_computing/basic_rest/cloudClass1/src/main/java/com/demo/dao/UserRepository.java
-/Users/kiran/Desktop/kiran/cloud_computing/basic_rest/cloudClass1/src/main/java/com/demo/entity/User.java
-/Users/kiran/Desktop/kiran/cloud_computing/basic_rest/cloudClass1/src/main/java/com/demo/security/BCryptPasswordEncoderBean.java
-/Users/kiran/Desktop/kiran/cloud_computing/basic_rest/cloudClass1/src/main/java/com/demo/service/UserService.java
-/Users/kiran/Desktop/kiran/cloud_computing/basic_rest/cloudClass1/src/main/java/com/demo/controller/UserController.java
-/Users/kiran/Desktop/kiran/cloud_computing/basic_rest/cloudClass1/src/main/java/com/demo/security/BasicAuthEntryPoint.java
+/Users/kiran/Desktop/csye6225-fall2018-master-final/webapp/stepcount/src/main/java/com/track/entity/Student.java
+/Users/kiran/Desktop/csye6225-fall2018-master-final/webapp/stepcount/src/main/java/com/track/entity/Parent.java
+/Users/kiran/Desktop/csye6225-fall2018-master-final/webapp/stepcount/src/main/java/com/track/entity/Steps.java
+/Users/kiran/Desktop/csye6225-fall2018-master-final/webapp/stepcount/src/main/java/com/track/Main.java
