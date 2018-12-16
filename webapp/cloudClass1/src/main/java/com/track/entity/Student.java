@@ -9,6 +9,7 @@ public class Student {
 
     @Id
     @Column(nullable=false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
 
@@ -16,6 +17,7 @@ public class Student {
     @OneToOne
     @JoinColumn(name="username")
     private User name;
+
 
 
 

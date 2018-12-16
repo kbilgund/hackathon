@@ -10,6 +10,7 @@ import com.track.entity.Student;
 import com.track.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,7 +18,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-
+import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -122,6 +124,66 @@ public class UserController {
         stepsRepository.save(steps);
 
         return ResponseEntity.ok(steps);
+
+    }
+
+    @RequestMapping(value="/steps",method = RequestMethod.GET )
+    public ResponseEntity<?> getSteps(@RequestBody Steps steps) {
+
+
+
+
+
+
+
+        return ResponseEntity.ok(steps);
+
+    }
+
+    @RequestMapping(value="/leader",method = RequestMethod.GET )
+    public ResponseEntity<?> getLeader() {
+
+        String top_5 = new String();
+
+        top_5 = "{";
+        int i =0;
+        for(Map<String, Object>  e : stepsRepository.findByrank()){
+
+            top_5 += "\"weeklySteps\":"+e.get("weeklySteps");
+            top_5 += "\"username\":"+e.get("username");
+
+            System.out.println(e.get("weeklySteps"));
+            System.out.println(e.get("username"));
+            i++;
+            if(i==5){
+                break;
+            }
+
+        }
+        top_5 += "}";
+        return ResponseEntity.ok(top_5);
+
+    }
+
+
+    @RequestMapping(value="/sync",method = RequestMethod.GET )
+    public ResponseEntity<?> syncSteps() {
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();
+
+        String last_time = new String();
+
+        for(Map<String, Object>  e : stepsRepository.lastRow(name)){
+
+            last_time = e.get("date").toString();
+            System.out.println(e.get("date"));
+            System.out.println(e.keySet());
+        }
+
+
+
+        return ResponseEntity.ok("{\"date\":"+last_time+"\"}");
 
     }
 }
